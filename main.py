@@ -2,6 +2,7 @@ from functions.menu import menu
 from functions.criar_cliente import criar_cliente
 from functions.criar_conta import criar_conta
 from functions.listar_contas import listar_contas
+from functions.depositar import depositar
 
 
 def main():
@@ -12,7 +13,7 @@ def main():
         opcao = menu()
 
         if opcao == "d":
-            pass
+            depositar(clientes)
 
         elif opcao == "s":
             pass

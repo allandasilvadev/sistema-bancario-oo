@@ -9,6 +9,7 @@ class ContaCorrente(Conta):
         self._limite_saques = limite_saques
 
     def __str__(self):
+        """ Formata a listagem de contas cadastradas. """
         return f"""
             Agência:\t{self.agencia}
             C/C:\t\t{self._numero}
