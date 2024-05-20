@@ -1,9 +1,12 @@
 from functions.menu import menu
 from functions.criar_cliente import criar_cliente
+from functions.criar_conta import criar_conta
+from functions.listar_contas import listar_contas
 
 
 def main():
     clientes = []
+    contas = []
 
     while True:
         opcao = menu()
@@ -21,10 +24,11 @@ def main():
             criar_cliente(clientes)
 
         elif opcao == "nc":
-            pass
+            numero_conta = len(contas) + 1
+            criar_conta(numero_conta, clientes, contas)
 
         elif opcao == "lc":
-            pass
+            listar_contas(contas)
 
         elif opcao == "q":
             break
