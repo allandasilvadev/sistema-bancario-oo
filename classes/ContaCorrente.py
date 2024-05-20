@@ -28,6 +28,6 @@ class ContaCorrente(Conta):
         """ Formata a listagem de contas cadastradas. """
         return f"""
             Agência:\t{self.agencia}
-            C/C:\t\t{self._numero}
+            C/C:\t\t{self.numero}
             Titular:\t{self.cliente.nome}
         """
