@@ -12,3 +12,11 @@ Ele consiste em um simulador de operações bancárias, o qual possui as seguint
 - Criar usuarios
 - Criar contas
 - Listar Contas
+
+### Forma de usar a aplicação:
+
+- Criar um novo usuário
+- Criar uma conta, associada a esse usuário
+- Listar as contas criadas <strong><small>(opcional)</small></strong>
+- Fazer depósitos e saques
+- Exibir o extrato
