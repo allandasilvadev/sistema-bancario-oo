@@ -1,7 +1,10 @@
 from functions.menu import menu
+from functions.criar_cliente import criar_cliente
 
 
 def main():
+    clientes = []
+
     while True:
         opcao = menu()
 
@@ -15,7 +18,7 @@ def main():
             pass
 
         elif opcao == "nu":
-            pass
+            criar_cliente(clientes)
 
         elif opcao == "nc":
             pass
