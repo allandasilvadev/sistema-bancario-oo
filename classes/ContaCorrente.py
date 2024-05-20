@@ -1,4 +1,5 @@
 from classes.Conta import Conta
+from classes.Saque import Saque
 
 
 class ContaCorrente(Conta):
@@ -7,6 +8,21 @@ class ContaCorrente(Conta):
         # atributos privados, so serao manipulados pela classe
         self._limite = limite
         self._limite_saques = limite_saques
+
+    def sacar(self, valor):
+        numero_saques = len([transacao for transacao in self.historico.transacoes if transacao["tipo"] == Saque.__name__])
+
+        excedeu_limite = valor > self._limite
+        excedeu_saques = numero_saques >= self._limite_saques
+
+        if excedeu_limite:
+            print("\nOperação falhou, O valor do saque excede o limite!\n")
+        elif excedeu_saques:
+            print("\nOperação falhou, número máximo de saques excedidos!\n")
+        else:
+            return super().sacar(valor)
+        
+        return False
 
     def __str__(self):
         """ Formata a listagem de contas cadastradas. """

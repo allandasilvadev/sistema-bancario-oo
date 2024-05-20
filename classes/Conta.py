@@ -14,6 +14,10 @@ class Conta:
         return cls(numero, cliente)
     
     @property
+    def saldo(self):
+        return self._saldo
+    
+    @property
     def numero(self):
         return self._numero
     
@@ -28,6 +32,22 @@ class Conta:
     @property
     def historico(self):
         return self._historico
+    
+
+    def sacar(self, valor):
+        saldo = self.saldo
+        excedeu_saldo = valor > saldo
+
+        if excedeu_saldo:
+            print("\nOperação falhou, você não tem saldo suficiente.\n")
+        elif valor > 0:
+            self._saldo -= valor
+            print("\nSaque realizado com sucesso!\n")
+            return True
+        else:
+            print("\nOperação falhou, o valor informado é inválido!\n")
+        
+        return False
     
     def depositar(self, valor):
         if valor > 0:

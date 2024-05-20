@@ -3,6 +3,8 @@ from functions.criar_cliente import criar_cliente
 from functions.criar_conta import criar_conta
 from functions.listar_contas import listar_contas
 from functions.depositar import depositar
+from functions.sacar import sacar
+from functions.exibir_extrato import exibir_extrato
 
 
 def main():
@@ -16,10 +18,10 @@ def main():
             depositar(clientes)
 
         elif opcao == "s":
-            pass
+            sacar(clientes)
 
         elif opcao == "e":
-            pass
+            exibir_extrato(clientes)
 
         elif opcao == "nu":
             criar_cliente(clientes)
